@@ -1,5 +1,22 @@
 <html><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252"><style>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    $(function(){
+        $('#perdiem tr:not(:first-child)').each(function(){
+            $(this).find('caption,thead').css({
+                "height" : 0,
+                "visibility" : "hidden",
+                "font-size" : 0
+            })
+
+            $(this).find('tbody td').css({
+                "padding" : "0.5em"
+            })
+        })
+    })
+</script>
+<style>
     body{
         font-family:Arial,sans-serif;
     }
@@ -27,6 +44,10 @@
     }
     #perdiem td{
         background:#E7EBF7;
+    }
+    #perdiem tbody tr table caption{
+        visibility:hidden;
+        height:0;
     }
 </style>
 </head><body><h1>Per Diem Rates</h1>
@@ -87,13 +108,13 @@
         </td>
         <td>46</td>
     </tr>
-<tr>
-        <td rowspan="3">Ithaca / Waterloo / Romulus</td>
-        <td rowspan="3">Tompkins / Seneca</td>
+    <tr>
+        <td>Ithaca / Waterloo / Romulus</td>
+        <td>Tompkins / Seneca</td>
         <td>
             <table>
-                <caption style="display:none">2014</caption>
-                <thead style="display:none">
+                <caption>2014</caption>
+                <thead>
                     <tr><th title="October">Oct</th>
                     <th title="November">Nov</th>
                     <th title="December">Dec</th>
@@ -107,8 +128,149 @@
         </td>
         <td>
             <table>
-                <caption style="display:none">2015</caption>
-                <thead style="display:none">
+                <caption>2015</caption>
+                <thead>
+                    <tr><th title="January">Jan</th>
+                    <th title="February">Feb</th>
+                    <th title="March">Mar</th>
+                    <th title="April">Apr</th>
+                    <th title="May">May</th>
+                    <th title="June">Jun</th>
+                    <th title="July">Jul</th>
+                    <th title="August">Aug</th>
+                    <th title="September">Sep</th>
+                </tr></thead>
+                <tbody>
+                    <tr><td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                </tr></tbody>
+            </table>
+        </td>
+        <td>46</td>
+    </tr>
+    <tr>
+        <td>Ithaca / Waterloo / Romulus</td>
+        <td>Tompkins / Seneca</td>
+        <td>
+            <table>
+                <caption>2014</caption>
+                <thead>
+                    <tr><th title="October">Oct</th>
+                    <th title="November">Nov</th>
+                    <th title="December">Dec</th>
+                </tr></thead>
+                <tbody>
+                    <tr><td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                </tr></tbody>
+            </table>
+        </td>
+        <td>
+            <table>
+                <caption>2015</caption>
+                <thead>
+                    <tr><th title="January">Jan</th>
+                    <th title="February">Feb</th>
+                    <th title="March">Mar</th>
+                    <th title="April">Apr</th>
+                    <th title="May">May</th>
+                    <th title="June">Jun</th>
+                    <th title="July">Jul</th>
+                    <th title="August">Aug</th>
+                    <th title="September">Sep</th>
+                </tr></thead>
+                <tbody>
+                    <tr><td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                </tr></tbody>
+            </table>
+        </td>
+        <td>46</td>
+    </tr>
+    <tr>
+        <td>Ithaca / Waterloo / Romulus</td>
+        <td>Tompkins / Seneca</td>
+        <td>
+            <table>
+                <caption>2014</caption>
+                <thead>
+                    <tr><th title="October">Oct</th>
+                    <th title="November">Nov</th>
+                    <th title="December">Dec</th>
+                </tr></thead>
+                <tbody>
+                    <tr><td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                </tr></tbody>
+            </table>
+        </td>
+        <td>
+            <table>
+                <caption>2015</caption>
+                <thead>
+                    <tr><th title="January">Jan</th>
+                    <th title="February">Feb</th>
+                    <th title="March">Mar</th>
+                    <th title="April">Apr</th>
+                    <th title="May">May</th>
+                    <th title="June">Jun</th>
+                    <th title="July">Jul</th>
+                    <th title="August">Aug</th>
+                    <th title="September">Sep</th>
+                </tr></thead>
+                <tbody>
+                    <tr><td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                </tr></tbody>
+            </table>
+        </td>
+        <td>46</td>
+    </tr>
+<tr>
+        <td rowspan="3">Ithaca / Waterloo / Romulus</td>
+        <td rowspan="3">Tompkins / Seneca</td>
+        <td>
+            <table>
+                <caption>2014</caption>
+                <thead>
+                    <tr><th title="October">Oct</th>
+                    <th title="November">Nov</th>
+                    <th title="December">Dec</th>
+                </tr></thead>
+                <tbody>
+                    <tr><td>115</td>
+                    <td>115</td>
+                    <td>115</td>
+                </tr></tbody>
+            </table>
+        </td>
+        <td>
+            <table>
+                <caption>2015</caption>
+                <thead>
                     <tr><th title="January">Jan</th>
                     <th title="February">Feb</th>
                     <th title="March">Mar</th>
