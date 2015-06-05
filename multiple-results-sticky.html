@@ -1,0 +1,463 @@
+<html>
+
+<head>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+    $(function() {
+        $('#perdiem tr:not(:first-child)').each(function() {
+            $(this).find('caption,thead').css({
+                "height": 0,
+                "visibility": "hidden",
+                "font-size": 0
+            })
+
+            $(this).find('tbody td').css({
+                "padding": "0.5em"
+            })
+        })
+
+        var lodgingWidth, lodgingOffset, lodgingScrollTop, lodgingMonthsHeight, tableScrollTop, tableHeight, tableBottom;
+
+        setStickyDimensions();
+        $(window).resize(function() {
+            setStickyDimensions();
+        })
+        $(window).scroll(function() {
+            showHideSticky();
+        });
+
+        function showHideSticky() {
+            if (window.scrollY > lodgingOffset.top && window.scrollY < tableBottom) {
+                $('#perdiem-sticky').show()
+            } else {
+                $('#perdiem-sticky').hide();
+            }
+        }
+
+        function setStickyDimensions() {
+            lodgingWidth = $('.perdiem-header-lodging').width();
+            lodgingOffset = $('.perdiem-header-lodging').offset();
+            lodgingScrollTop = $('.perdiem-header-months').scrollTop();
+            lodgingMonthsHeight = $('.perdiem-header-months').height() - $('.perdiem-header-months td').height();
+            lodgingScrollTop += lodgingMonthsHeight;
+            tableScrollTop = $('#perdiem').scrollTop();
+            tableHeight = $('#perdiem').height();
+            tableBottom = tableScrollTop + tableHeight;
+            $('#perdiem-sticky').css({
+                'width': lodgingWidth,
+                'left': lodgingOffset.left,
+                'top': 0
+            })
+        }
+
+    })
+    </script>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    #perdiem,
+    #perdiem table {
+        width: 100%;
+    }
+    
+    #perdiem td {
+        text-align: center;
+    }
+    
+    #perdiem > caption {
+        background: #0A125B;
+        color: #fff;
+        padding: 5px;
+    }
+    
+    #perdiem > thead,
+    #perdiem th,
+    #perdiem table caption,
+    #perdiem-sticky th,
+    #perdiem-sticky caption {
+        background: #5C69AD;
+        color: #fff;
+        font-weight: bold;
+    }
+    
+    #perdiem > thead a {
+        color: #fff;
+    }
+    
+    #perdiem td,
+    #perdiem-sticky {
+        background: #E7EBF7;
+    }
+    
+    #perdiem-sticky table {
+        width: 100%;
+    }
+    
+    #perdiem-sticky {
+        position: fixed;
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Per Diem Rates</h1>
+    <div id="perdiem-sticky">
+        <table>
+            <tr>
+                <td>
+                    <table>
+                        <caption>2014</caption>
+                        <thead>
+                            <tr>
+                                <th title="October">Oct</th>
+                                <th title="November">Nov</th>
+                                <th title="December">Dec</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <caption>2015</caption>
+                        <thead>
+                            <tr>
+                                <th title="January">Jan</th>
+                                <th title="February">Feb</th>
+                                <th title="March">Mar</th>
+                                <th title="April">Apr</th>
+                                <th title="May">May</th>
+                                <th title="June">Jun</th>
+                                <th title="July">Jul</th>
+                                <th title="August">Aug</th>
+                                <th title="September">Sep</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <table id="perdiem">
+        <caption>Fiscal Year 2015 Per Diem Rates for ZIP <em>14850</em></caption>
+        <thead>
+            <tr>
+                <th rowspan="2">Primary Destination (<a href="#perdiem-footnotes-1">1</a>, <a href="#perdiem-footnotes-2">2</a>)</th>
+                <th>County (<a href="#peem-footnotes-3">3</a>, <a href="#perdiem-footnotes-4">4</a>)</th>
+                <th class="perdiem-header-lodging" colspan="2">Max lodging by Month (excluding taxes)</th>
+                <th title="Meals and Incidental Expenses">M&amp;IE (<a href="#perdiem-footnotes-5">5</a>)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ithaca / Waterloo / Romulus</td>
+                <td>Tompkins / Seneca</td>
+                <td>
+                    <table class="perdiem-header-months">
+                        <caption>2014</caption>
+                        <thead>
+                            <tr>
+                                <th title="October">Oct</th>
+                                <th title="November">Nov</th>
+                                <th title="December">Dec</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <caption>2015</caption>
+                        <thead>
+                            <tr>
+                                <th title="January">Jan</th>
+                                <th title="February">Feb</th>
+                                <th title="March">Mar</th>
+                                <th title="April">Apr</th>
+                                <th title="May">May</th>
+                                <th title="June">Jun</th>
+                                <th title="July">Jul</th>
+                                <th title="August">Aug</th>
+                                <th title="September">Sep</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td>Ithaca / Waterloo / Romulus</td>
+                <td>Tompkins / Seneca</td>
+                <td>
+                    <table>
+                        <caption>2014</caption>
+                        <thead>
+                            <tr>
+                                <th title="October">Oct</th>
+                                <th title="November">Nov</th>
+                                <th title="December">Dec</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <caption>2015</caption>
+                        <thead>
+                            <tr>
+                                <th title="January">Jan</th>
+                                <th title="February">Feb</th>
+                                <th title="March">Mar</th>
+                                <th title="April">Apr</th>
+                                <th title="May">May</th>
+                                <th title="June">Jun</th>
+                                <th title="July">Jul</th>
+                                <th title="August">Aug</th>
+                                <th title="September">Sep</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td>Ithaca / Waterloo / Romulus</td>
+                <td>Tompkins / Seneca</td>
+                <td>
+                    <table>
+                        <caption>2014</caption>
+                        <thead>
+                            <tr>
+                                <th title="October">Oct</th>
+                                <th title="November">Nov</th>
+                                <th title="December">Dec</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <caption>2015</caption>
+                        <thead>
+                            <tr>
+                                <th title="January">Jan</th>
+                                <th title="February">Feb</th>
+                                <th title="March">Mar</th>
+                                <th title="April">Apr</th>
+                                <th title="May">May</th>
+                                <th title="June">Jun</th>
+                                <th title="July">Jul</th>
+                                <th title="August">Aug</th>
+                                <th title="September">Sep</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td>Ithaca / Waterloo / Romulus</td>
+                <td>Tompkins / Seneca</td>
+                <td>
+                    <table>
+                        <caption>2014</caption>
+                        <thead>
+                            <tr>
+                                <th title="October">Oct</th>
+                                <th title="November">Nov</th>
+                                <th title="December">Dec</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <caption>2015</caption>
+                        <thead>
+                            <tr>
+                                <th title="January">Jan</th>
+                                <th title="February">Feb</th>
+                                <th title="March">Mar</th>
+                                <th title="April">Apr</th>
+                                <th title="May">May</th>
+                                <th title="June">Jun</th>
+                                <th title="July">Jul</th>
+                                <th title="August">Aug</th>
+                                <th title="September">Sep</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td rowspan="3">Ithaca / Waterloo / Romulus</td>
+                <td rowspan="3">Tompkins / Seneca</td>
+                <td>
+                    <table>
+                        <caption>2014</caption>
+                        <thead>
+                            <tr>
+                                <th title="October">Oct</th>
+                                <th title="November">Nov</th>
+                                <th title="December">Dec</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <caption>2015</caption>
+                        <thead>
+                            <tr>
+                                <th title="January">Jan</th>
+                                <th title="February">Feb</th>
+                                <th title="March">Mar</th>
+                                <th title="April">Apr</th>
+                                <th title="May">May</th>
+                                <th title="June">Jun</th>
+                                <th title="July">Jul</th>
+                                <th title="August">Aug</th>
+                                <th title="September">Sep</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                                <td>115</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>46</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="perdiem-footnotes">
+        <h4>Footnotes</h4>
+        <ol>
+            <li>
+                <a name="perdiem-footnotes-1"></a>Traveler reimbursement is based on the location of the work activities and not the accommodations, unless lodging is not available at the work activity, then the agency may authorize the rate where lodging is obtained. </li>
+            <li>
+                <a name="perdiem-footnotes-2"></a>Unless otherwise specified, the per diem locality is defined as "all locations within, or entirely surrounded by, the corporate limits of the key city, including independent entities located within those boundaries."</li>
+            <li>
+                <a name="perdiem-footnotes-3"></a>Per diem localities with county definitions shall include"all locations within, or entirely surrounded by, the corporate limits of the key city as well as the boundaries of the listed counties, including independent entities located within the boundaries of the key city and the listed counties (unless otherwise listed separately)."</li>
+            <li>
+                <a name="perdiem-footnotes-4"></a>When a military installation or Government-related facility (whether or not specifically named) is located partially within more than one city or county boundary, the applicable per diem rate for the entire installation or facility is the higher of the rates which apply to the cities and/or counties, even though part(s) of such activities may be located outside the defined per diem locality.</li>
+            <li>
+                <a name="perdiem-footnotes-5"></a><em>Meals and Incidental Expenses</em>, see <a href="http://gsa.gov/portal/content/101518">Breakdown of M&amp;IE Expenses</a> for important information on first and last days of travel.</li>
+        </ol>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+
+</html>
